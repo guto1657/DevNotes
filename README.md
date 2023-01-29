@@ -21,7 +21,7 @@ In this project users should be able to:
 
 ## Deploying
 
-- [#](#)
+- [Github Pages](https://guto1657.github.io/DevNotes/)
 
 ## Built With
 
