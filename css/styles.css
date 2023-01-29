@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica";
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #202124;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em 2em;
+  border-bottom: 1px solid #ccc;
+  color: #fff;
+}
+
+.btn {
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 0.5em 1.3em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 300ms all ease-in-out;
+}
+.btn:hover {
+  transition: 300ms all ease-in-out;
+  background-color: #fff;
+  color: #525356;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.searchWrapper #searchField {
+  padding: 12px 7px;
+  border-radius: 5px;
+  max-width: 100%;
+  min-width: 400px;
+  background-color: #525356;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.searchWrapper #searchField::placeholder {
+  color: #ddd;
+}
+
+#notesWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2em;
+  padding: 2em;
+}
+
+.addNoteContainer {
+  width: 400px;
+  margin: 2em auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+.addNoteContainer .addBtn {
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #333;
+  transition: all 300ms ease-in-out;
+}
+.addNoteContainer .addBtn:hover {
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 300ms ease-in-out;
+}
+.addNoteContainer #addNoteField {
+  padding: 10px;
+  background: transparent;
+  flex: 1;
+  border: none;
+  outline: none;
+  border: 1px solid #525356;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.note {
+  min-height: 200px;
+  color: #fff;
+  padding: 1em;
+  border: 3px solid #ccc;
+  background-color: #202124;
+  border-radius: 7px;
+  position: relative;
+}
+.note textarea {
+  resize: none;
+  background: transparent;
+  color: #fff;
+  height: 70%;
+  width: 85%;
+  border: none;
+  font-size: 1.2em;
+  outline: none;
+  overflow: auto;
+}
+.note textarea::-webkit-scrollbar {
+  display: none;
+}
+.note .thumbtackWrapper {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: #333;
+  padding: 0.5em;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+.note .optionsWrapper {
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  gap: 0.5em;
+}
+.note .optionsWrapper i {
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: 300ms all ease-in-out;
+}
+.note:hover .optionsWrapper > i {
+  opacity: 0.2;
+  visibility: visible;
+}
+.note:hover .optionsWrapper i:hover {
+  opacity: 1;
+  transition: 300ms all ease-in-out;
+}
+.note.pinned {
+  background-color: #3c3c3f;
+}
+
+@media (max-width: 768px) {
+  .note {
+    min-height: 250px;
+    width: 100%;
+  }
+  .note .optionsWrapper {
+    position: absolute;
+    right: 5%;
+    top: 80%;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.4em;
+    gap: 1em;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+  }
+  .navbar .searchWrapper {
+    gap: 0;
+  }
+  .navbar .searchWrapper i {
+    display: none;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .navbar .searchWrapper #searchField {
+    max-width: 100%;
+    min-width: auto;
+  }
+  .navbar .exportCsvWrapper {
+    display: none;
+  }
+  .navbar .exportCsvWrapper .btn {
+    padding: 0.5em 1em;
+  }
+  .addNoteContainer {
+    width: 100%;
+    margin: 2em auto;
+    gap: 1em;
+    padding: 1em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
